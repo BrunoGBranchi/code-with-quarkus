@@ -3,6 +3,8 @@ package org.brunobranchi;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+//import io.micrometer.core.annotation.Counted;
+//import io.micrometer.core.instrument.MeterRegistry;
 
 import java.util.List;
 
@@ -12,6 +14,7 @@ import java.util.List;
 public class PessoaResource {
 
     @GET
+    //@Counted(value = "counted.getPessoa")
     public List<Pessoa> getPessoa() {
         return Pessoa.listAll();
     }
